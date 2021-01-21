@@ -27,10 +27,10 @@ class ViewController: UIViewController {
     // MARK: - 유효성 검사 Rx 바인딩
     func setupBindUI(){
         firstTextField.rx.text.orEmpty
-            .map(checkValidate2)
+            .map(checkValidate1)
             .subscribe(onNext: {value in
                 print(value)
-                self.secondLabel.isHidden = value
+                self.firstLabel.isHidden = value
             })
             .disposed(by: disposeBag)
         
